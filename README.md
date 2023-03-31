@@ -1,2 +1,2 @@
 # next_js
-This project showcases next js features
+This project uses next.js
