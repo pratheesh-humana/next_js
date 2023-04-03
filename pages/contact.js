@@ -1,14 +1,20 @@
 import Head from "next/head";
 import Image from "next/image";
-import Header from "@/components/Header";
+import { useEffect } from "react";
 
-const contact = () => {
+const contact = ({ setView }) => {
+  useEffect(() => {
+    setView(true);
+  }, []);
+
   return (
     <>
       <Head>
         <title>Contact</title>
       </Head>
-      <h1 className="title">Contact</h1>
+      <header>
+        <h1 className="title">Contact</h1>
+      </header>
       <div className="img_contact">
         <Image src="/image.webp" width="500" height="350"></Image>
       </div>
