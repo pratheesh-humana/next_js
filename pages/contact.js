@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useEffect } from "react";
 
-const contact = ({ setView }) => {
+const Contact = ({ setView }) => {
   useEffect(() => {
     setView(true);
   }, []);
@@ -22,4 +22,4 @@ const contact = ({ setView }) => {
   );
 };
 
-export default contact;
+export default Contact;

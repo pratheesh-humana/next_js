@@ -17,7 +17,7 @@ const Error = () => {
           <h1 className="title_head"> 404 Page Not Found </h1>
         </div>
         <div className="message">
-          <p className="title"> Sorry, This page doesn't exist</p>
+          <p className="title"> Sorry, This page doesnot exist</p>
         </div>
       </div>
     </div>
