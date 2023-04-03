@@ -1,9 +1,10 @@
 Patient health application is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`].
 
 ## Getting Started
-install node
+install latest node
+```bash 
 npm install
-
+```
 First, run the development server:
 
 ```bash
