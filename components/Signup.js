@@ -46,7 +46,9 @@ const Signup = () => {
   return (
     <div className="form_container" onSubmit={handleSubmit}>
       <form className="form">
-        <h1 className="heading">Registration</h1>
+        <header className="heading">
+          <h1>Registration</h1>
+        </header>
         <div className="mb-3 form_control">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Patient Name

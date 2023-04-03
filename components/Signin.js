@@ -54,7 +54,9 @@ const Signin = ({ setView }) => {
   return (
     <div className="signin_form_container">
       <form className="form_signin" onSubmit={handleSubmit}>
-        <h1 className="heading">Login</h1>
+        <header className="heading">
+          <h1>Login</h1>
+        </header>
         <div className="mb-3 form_control">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Email address

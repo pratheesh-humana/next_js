@@ -119,8 +119,8 @@ const Footer = () => {
             </div>
             <hr className="mb-4" />
             <div className="row align-items-center">
-              <div className="col-md-7 col-lg-8">
-                <p className="text_copy">
+              <div className="col-md-7 col-lg-8 text_copy">
+                <p>
                   Copyright @2020 All rights reserved by :
                   <a href="#" style={{ textDecoration: "none" }}>
                     <strong className="text-warning"> Humana</strong>
