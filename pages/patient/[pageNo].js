@@ -1,5 +1,3 @@
-import Header from "@/components/Header";
-
 export const getStaticPaths = async () => {
   const res = await fetch("https://dummyjson.com/posts");
   const { posts } = await res.json();
@@ -32,7 +30,6 @@ const myData = ({ data }) => {
   const { id, title, body } = data;
   return (
     <>
-      <Header />
       <div className="container">
         <div key={id} className="cards_details">
           <h3 className="id_style">{id}</h3>

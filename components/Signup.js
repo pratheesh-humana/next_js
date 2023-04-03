@@ -35,7 +35,7 @@ const Signup = () => {
           action.resetForm();
           notify();
           setTimeout(() => {
-            router.push("/login");
+            router.push("/");
           }, 3000);
         } catch (error) {
           notifyError();
