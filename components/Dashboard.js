@@ -2,7 +2,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Header = () => {
+const Dashboard = ({ setView }) => {
+  const logoutButton = () => {
+    localStorage.removeItem("user_login");
+    setView(false);
+  };
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-dark">
@@ -25,19 +29,28 @@ const Header = () => {
             <ul className="navbar-nav ms-auto head">
               <li className="nav-item">
                 <Link
-                  href="/"
+                  href="/patient"
                   className="nav-link active text-white font-weight-bold"
                   aria-current="page"
                 >
-                  Home
+                  Patient Details
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/registration"
+                  href="/contact"
                   className="nav-link active text-white font-weight-bold"
                 >
-                  Registration
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/"
+                  onClick={logoutButton}
+                  className="nav-link active text-white font-weight-bold"
+                >
+                  Logout
                 </Link>
               </li>
             </ul>
@@ -48,4 +61,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Dashboard;

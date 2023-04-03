@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import Header from "@/components/Header";
+import { useEffect } from "react";
 
-const contact = () => {
+const contact = ({ setView }) => {
+  useEffect(() => {
+    setView(true);
+  }, []);
+
   return (
     <>
       <Head>

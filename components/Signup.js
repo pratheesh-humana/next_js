@@ -39,7 +39,6 @@ const Signup = () => {
           }, 3000);
         } catch (error) {
           notifyError();
-          console.log(error);
         }
       },
     });

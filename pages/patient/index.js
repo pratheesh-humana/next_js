@@ -1,6 +1,6 @@
 import Link from "next/link";
-import React from "react";
 import Head from "next/head";
+import { useEffect } from "react";
 
 export const getStaticProps = async () => {
   const res = await fetch("https://dummyjson.com/posts");
@@ -13,7 +13,11 @@ export const getStaticProps = async () => {
   };
 };
 
-const Posts = ({ posts }) => {
+const Posts = ({ posts, setView }) => {
+  useEffect(() => {
+    setView(true);
+  }, []);
+
   return (
     <>
       <div>

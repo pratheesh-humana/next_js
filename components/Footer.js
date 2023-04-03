@@ -1,78 +1,188 @@
-import React from "react";
+import Head from "next/head";
 
 const Footer = () => {
   return (
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            Footer
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Privacy Policy
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Contact Details
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Pricing
-                </a>
-              </li>
-              <li class="nav-item dropdown">
+    <>
+      <footer className="bg-dark text-white pt-5 pb-4">
+        <div className="text-center text-md-left">
+          <div className="row text-center text-md-left">
+            <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h5 className="text-uppercase mb-4 font-weight-bold text-warning">
+                Humana
+              </h5>
+              <p>
+                At Humana, our cultural foundation is aligned to helping members
+                achieve their best health by delivering personalized,
+                simplified, whole-person healthcare experiences. Recognizing
+                healthcare needs continue to evolve for each person, for each
+                family and for each community.
+              </p>
+            </div>
+            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h5 className="text-uppercase mb-4 font-weight-bold text-warning">
+                Products
+              </h5>
+              <p>
                 <a
-                  class="nav-link dropdown-toggle"
                   href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                  className="text-white"
+                  style={{ textDecoration: "none" }}
                 >
-                  Dropdown link
+                  Humana
                 </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
+              </p>
+              <p>
+                <a
+                  href="#"
+                  className="text-white"
+                  style={{ textDecoration: "none" }}
                 >
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+                  Creativity
+                </a>
+              </p>
+              <p>
+                <a
+                  href="#"
+                  className="text-white"
+                  style={{ textDecoration: "none" }}
+                >
+                  SourceFiles
+                </a>
+              </p>
+              <p>
+                <a
+                  href="#"
+                  className="text-white"
+                  style={{ textDecoration: "none" }}
+                >
+                  Health
+                </a>
+              </p>
+            </div>
+            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h5 className="text-uppercase mb-4 font-weight-bold text-warning">
+                Useful Links
+              </h5>
+              <p>
+                <a
+                  href="#"
+                  className="text-white"
+                  style={{ textDecoration: "none" }}
+                >
+                  Your Account
+                </a>
+              </p>
+              <p>
+                <a
+                  href="#"
+                  className="text-white"
+                  style={{ textDecoration: "none" }}
+                >
+                  Become an Affiliates
+                </a>
+              </p>
+              <p>
+                <a
+                  href="#"
+                  className="text-white"
+                  style={{ textDecoration: "none" }}
+                >
+                  Shipping Charges
+                </a>
+              </p>
+              <p>
+                <a
+                  href="#"
+                  className="text-white"
+                  style={{ textDecoration: "none" }}
+                >
+                  Help
+                </a>
+              </p>
+            </div>
+            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h5 className="text-uppercase mb-4 font-weight-bold text-warning">
+                Contact
+              </h5>
+              <p>
+                <i className="fas fa-home mr-3"></i>New York, NY 2323, US
+              </p>
+              <p>
+                <i className="fas fa-envelope mr-3"></i>humana@gmail.com
+              </p>
+              <p>
+                <i className="fas fa-phone mr-3"></i>+91 78459662515
+              </p>
+              <p>
+                <i className="fas fa-print mr-3"></i>+01 335 633 77
+              </p>
+            </div>
+            <hr className="mb-4" />
+            <div className="row align-items-center">
+              <div className="col-md-7 col-lg-8">
+                <p className="text_copy">
+                  Copyright @2020 All rights reserved by :
+                  <a href="#" style={{ textDecoration: "none" }}>
+                    <strong className="text-warning"> Humana</strong>
+                  </a>
+                </p>
+              </div>
+              <div className="col-md-5 col-lg-4">
+                <div className="text-center text-md-right">
+                  <ul className="list-unstyled list-inline">
+                    <li className="list-inline-item">
+                      <a
+                        href="#"
+                        className="btn-floating btn-sm text-white"
+                        style={{ fontSize: "23px" }}
+                      >
+                        <i className="fab fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li className="list-inline-item">
+                      <a
+                        href="#"
+                        className="btn-floating btn-sm text-white"
+                        style={{ fontSize: "23px" }}
+                      >
+                        <i className="fab fa-twitter"></i>
+                      </a>
+                    </li>{" "}
+                    <li className="list-inline-item">
+                      <a
+                        href="#"
+                        className="btn-floating btn-sm text-white"
+                        style={{ fontSize: "23px" }}
+                      >
+                        <i className="fab fa-google-plus"></i>
+                      </a>
+                    </li>{" "}
+                    <li className="list-inline-item">
+                      <a
+                        href="#"
+                        className="btn-floating btn-sm text-white"
+                        style={{ fontSize: "23px" }}
+                      >
+                        <i className="fab fa-linkedin-in"></i>
+                      </a>
+                    </li>
+                    <li className="list-inline-item">
+                      <a
+                        href="#"
+                        className="btn-floating btn-sm text-white"
+                        style={{ fontSize: "23px" }}
+                      >
+                        <i className="fab fa-youtube"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-    </div>
+      </footer>
+    </>
   );
 };
 

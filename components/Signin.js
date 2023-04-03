@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useFormik } from "formik";
 import { signInSchema } from "./Validation_Schema";
@@ -11,7 +11,7 @@ const initialValues = {
   password: "",
 };
 
-const Signin = () => {
+const Signin = ({ setView }) => {
   const router = useRouter();
 
   const notifyError = () =>
@@ -28,7 +28,6 @@ const Signin = () => {
       initialValues: initialValues,
       validationSchema: signInSchema,
       onSubmit: (values, action) => {
-        console.log("values", values);
         action.resetForm();
         const getUserData = localStorage.getItem("registration");
         if (getUserData && getUserData.length) {
@@ -45,6 +44,7 @@ const Signin = () => {
             notify();
             setTimeout(() => {
               router.push("/patient");
+              setView(true);
             }, 3000);
           }
         }
@@ -52,7 +52,7 @@ const Signin = () => {
     });
 
   return (
-    <div className="form_container">
+    <div className="signin_form_container">
       <form className="form_signin" onSubmit={handleSubmit}>
         <h1 className="heading">Login</h1>
         <div className="mb-3 form_control">
