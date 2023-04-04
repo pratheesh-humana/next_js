@@ -1,7 +1,11 @@
 import Contact from "@/components/Contact";
 import Head from "next/head";
 
-const contact = ({ setView }) => {
+const Contact = ({ setView }) => {
+  useEffect(() => {
+    setView(true);
+  }, []);
+
   return (
     <>
       <Head>
@@ -12,4 +16,4 @@ const contact = ({ setView }) => {
   );
 };
 
-export default contact;
+export default Contact;
