@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,6 +26,7 @@ export const getStaticProps = async () => {
 
 const Posts = ({ posts, setView, error }) => {
   const router = useRouter();
+  const [storage, setStorage] = useState(null);
 
   const notifyError = () =>
     toast("You need to login to fetch patient's details!", {
@@ -33,7 +34,9 @@ const Posts = ({ posts, setView, error }) => {
     });
 
   useEffect(() => {
-    if (localStorage.getItem("user_login") !== null) {
+    const data = localStorage.getItem("user_login");
+    setStorage(data);
+    if (storage !== null) {
       setView(true);
     } else {
       router.push("/");
@@ -42,7 +45,7 @@ const Posts = ({ posts, setView, error }) => {
         notifyError();
       }, 500);
     }
-  }, []);
+  }, [storage]);
 
   useEffect(() => {
     if (error) {

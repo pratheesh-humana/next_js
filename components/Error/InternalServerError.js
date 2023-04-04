@@ -6,8 +6,8 @@ const InternalServerError = () => {
   useEffect(() => {
     setTimeout(() => {
       router.push("/");
-    }, 10000);
-  },[]);
+    }, 8000);
+  }, []);
 
   return (
     <>
