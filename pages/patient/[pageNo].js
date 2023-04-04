@@ -1,29 +1,37 @@
 export const getStaticPaths = async () => {
-  const res = await fetch("https://dummyjson.com/posts");
-  const { posts } = await res.json();
+  try {
+    const res = await fetch("https://dummyjson.com/posts");
+    const { posts } = await res.json();
 
-  const paths = posts.map((curElem) => {
+    const paths = posts.map((curElem) => {
+      return {
+        params: { pageNo: curElem.id.toString() },
+      };
+    });
+
     return {
-      params: { pageNo: curElem.id.toString() },
+      paths,
+      fallback: false,
     };
-  });
-
-  return {
-    paths,
-    fallback: false,
-  };
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const getStaticProps = async (context) => {
-  const id = context.params.pageNo;
-  const res = await fetch(`https://dummyjson.com/posts/${id}`);
-  const data = await res.json();
+  try {
+    const id = context.params.pageNo;
+    const res = await fetch(`https://dummyjson.com/posts/${id}`);
+    const data = await res.json();
 
-  return {
-    props: {
-      data,
-    },
-  };
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const myData = ({ data }) => {

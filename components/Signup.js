@@ -108,7 +108,7 @@ const Signup = () => {
         </div>
         <div className="mb-3 form_control">
           <label htmlFor="exampleInputEmail1" className="form-label">
-            Email address
+            Email Address
           </label>
           <input
             type="email"
@@ -125,7 +125,7 @@ const Signup = () => {
             <p className="form-error">{errors.email}</p>
           ) : null}
           <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
+            We will never share your email with anyone else.
           </div>
         </div>
         <div className="mb-3 form_control">
