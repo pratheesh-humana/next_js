@@ -36,7 +36,7 @@ export const getStaticProps = async (context) => {
   }
 };
 
-const myData = ({ data, setView }) => {
+const PatientData = ({ data, setView }) => {
   useEffect(() => {
     setView(true);
   }, []);
@@ -55,4 +55,4 @@ const myData = ({ data, setView }) => {
   );
 };
 
-export default myData;
+export default PatientData;
