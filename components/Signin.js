@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Link from "next/link";
 import { useFormik } from "formik";
 import { signInSchema } from "./Validation_Schema";
@@ -28,25 +27,30 @@ const Signin = ({ setView }) => {
       initialValues: initialValues,
       validationSchema: signInSchema,
       onSubmit: (values, action) => {
-        action.resetForm();
-        const getUserData = localStorage.getItem("registration");
-        if (getUserData && getUserData.length) {
-          const userData = JSON.parse(getUserData);
-          const userLogin = userData.filter((res, key) => {
-            return (
-              res.email === values.email && res.password === values.password
-            );
-          });
-          if (userLogin.length === 0) {
-            notifyError();
-          } else {
-            localStorage.setItem("user_login", JSON.stringify(getUserData));
-            notify();
-            setTimeout(() => {
-              router.push("/patient");
-              setView(true);
-            }, 3000);
+        try {
+          const getUserData = localStorage.getItem("registration");
+          action.resetForm();
+          if (getUserData && getUserData.length) {
+            const userData = JSON.parse(getUserData);
+            const userLogin = userData.filter((res, key) => {
+              return (
+                res.email === values.email && res.password === values.password
+              );
+            });
+            if (userLogin.length === 0) {
+              notifyError();
+            } else {
+              localStorage.setItem("user_login", JSON.stringify(getUserData));
+              notify();
+              setTimeout(() => {
+                router.push("/patient");
+                setView(true);
+              }, 3000);
+            }
           }
+        } catch (error) {
+          router.push("/500");
+          console.log(error);
         }
       },
     });

@@ -8,14 +8,14 @@ const Footer = () => {
           <div className="row text-center text-md-left">
             <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
               <h5 className="text-uppercase mb-4 font-weight-bold text-warning">
-                Humana
+                Demo Client
               </h5>
               <p>
-                At Humana, our cultural foundation is aligned to helping members
-                achieve their best health by delivering personalized,
-                simplified, whole-person healthcare experiences. Recognizing
-                healthcare needs continue to evolve for each person, for each
-                family and for each community.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                rem repellendus sunt! Repudiandae in alias eum animi architecto
+                quibusdam asperiores nihil eaque officia quia doloremque,
+                deleniti suscipit libero ea excepturi totam aliquid adipisci
+                autem id accusantium provident atque?
               </p>
             </div>
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
@@ -28,7 +28,7 @@ const Footer = () => {
                   className="text-white"
                   style={{ textDecoration: "none" }}
                 >
-                  Humana
+                  Demo Client
                 </a>
               </p>
               <p>
@@ -108,7 +108,7 @@ const Footer = () => {
                 <i className="fas fa-home mr-3"></i>New York, NY 2323, US
               </p>
               <p>
-                <i className="fas fa-envelope mr-3"></i>humana@gmail.com
+                <i className="fas fa-envelope mr-3"></i>democlient@gmail.com
               </p>
               <p>
                 <i className="fas fa-phone mr-3"></i>+91 78459662515
@@ -123,7 +123,7 @@ const Footer = () => {
                 <p>
                   Copyright @2020 All rights reserved by :
                   <a href="#" style={{ textDecoration: "none" }}>
-                    <strong className="text-warning"> Humana</strong>
+                    <strong className="text-warning"> The Provider</strong>
                   </a>
                 </p>
               </div>

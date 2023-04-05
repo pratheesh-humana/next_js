@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => {
@@ -8,7 +7,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            <Image src="/humana.png" width="160" height="40" alt="logo"></Image>
+            <h1 className="text-white font-weight-bold">Demo Client</h1>
           </a>
           <button
             className="navbar-toggler"

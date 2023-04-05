@@ -1,7 +1,7 @@
 import Signup from "@/components/Signup";
 import Head from "next/head";
 
-const products = () => {
+const Registration = () => {
   return (
     <>
       <Head>
@@ -12,4 +12,4 @@ const products = () => {
   );
 };
 
-export default products;
+export default Registration;

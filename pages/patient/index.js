@@ -1,22 +1,30 @@
 import Link from "next/link";
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useRouter } from "next/router";
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://dummyjson.com/posts");
-  const { posts } = await res.json();
+  try {
+    const res = await fetch("https://dummyjson.com/posts");
+    const { posts } = await res.json();
 
-  return {
-    props: {
-      posts,
-    },
-  };
+    return {
+      props: {
+        posts,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        error: true,
+      },
+    };
+  }
 };
 
-const Posts = ({ posts, setView }) => {
+const Posts = ({ posts, setView, error }) => {
   const router = useRouter();
 
   const notifyError = () =>
@@ -36,11 +44,17 @@ const Posts = ({ posts, setView }) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (error) {
+      router.push("/500");
+    }
+  }, [error]);
+
   return (
     <>
-      <div>
+      <>
         <Head>
-          <title>Blog</title>
+          <title>Patient Details</title>
         </Head>
         {posts?.slice(0, 20).map((currElem) => {
           const { id, title } = currElem;
@@ -53,7 +67,7 @@ const Posts = ({ posts, setView }) => {
             </div>
           );
         })}
-      </div>
+      </>
       <ToastContainer />
     </>
   );

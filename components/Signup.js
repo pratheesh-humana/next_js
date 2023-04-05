@@ -108,7 +108,7 @@ const Signup = () => {
         </div>
         <div className="mb-3 form_control">
           <label htmlFor="exampleInputEmail1" className="form-label">
-            Email address
+            Email Address
           </label>
           <input
             type="email"
