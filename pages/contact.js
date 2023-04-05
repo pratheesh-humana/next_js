@@ -1,8 +1,7 @@
 import Contact from "@/components/Contact";
 import Head from "next/head";
 
-const contact = ({ setView }) => {
-
+const ContactPage = ({ setView }) => {
   return (
     <>
       <Head>
@@ -13,4 +12,4 @@ const contact = ({ setView }) => {
   );
 };
 
-export default contact;
+export default ContactPage;

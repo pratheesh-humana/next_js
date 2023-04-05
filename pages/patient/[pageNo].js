@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 export const getStaticPaths = async () => {
   try {
     const res = await fetch("https://dummyjson.com/posts");
@@ -34,7 +36,11 @@ export const getStaticProps = async (context) => {
   }
 };
 
-const myData = ({ data }) => {
+const myData = ({ data, setView }) => {
+  useEffect(() => {
+    setView(true);
+  }, []);
+
   const { id, title, body } = data;
   return (
     <>
