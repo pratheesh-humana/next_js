@@ -47,7 +47,7 @@ const Signup = () => {
     <div className="form_container" onSubmit={handleSubmit}>
       <form className="form">
         <header className="heading">
-          <h1>Registration</h1>
+          <h1>Patient Registration</h1>
         </header>
         <div className="mb-3 form_control">
           <label htmlFor="exampleInputEmail1" className="form-label">
@@ -148,7 +148,7 @@ const Signup = () => {
         </div>
         <div className="mb-3 form-check">
           <Link href="/" className="accountcolor">
-            I am already register
+            I am already registered
           </Link>
         </div>
         <div className="d-grid gap-2">

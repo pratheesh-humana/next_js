@@ -18,7 +18,7 @@ const Signin = ({ setView }) => {
       position: toast.POSITION.TOP_CENTER,
     });
   const notify = () =>
-    toast.success("Patient login successfully!", {
+    toast.success("You have logged in successfully!", {
       position: toast.POSITION.TOP_CENTER,
     });
 
