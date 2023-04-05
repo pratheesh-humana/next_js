@@ -26,7 +26,6 @@ export const getStaticProps = async () => {
 
 const Posts = ({ posts, setView, error }) => {
   const router = useRouter();
-  const [storage, setStorage] = useState(null);
 
   const notifyError = () =>
     toast("You need to login to fetch patient's details!", {
@@ -34,9 +33,7 @@ const Posts = ({ posts, setView, error }) => {
     });
 
   useEffect(() => {
-    const data = localStorage.getItem("user_login");
-    setStorage(data);
-    if (storage !== null) {
+    if (localStorage.getItem("user_login") !== null) {
       setView(true);
     } else {
       router.push("/");
@@ -45,7 +42,7 @@ const Posts = ({ posts, setView, error }) => {
         notifyError();
       }, 500);
     }
-  }, [storage]);
+  }, []);
 
   useEffect(() => {
     if (error) {
