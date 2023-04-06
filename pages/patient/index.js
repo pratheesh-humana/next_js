@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Head from "next/head";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -70,7 +71,9 @@ const Posts = ({ countries, setView, error }) => {
         return (
           <div className="cards" key={code}>
             <h3>{emoji}</h3>
-            <h3>{name}</h3>
+            <Link href={`/patient/${name.length}`}>
+              <h3>{name}</h3>
+            </Link>
             <h2 className="title_link">{code}</h2>
           </div>
         );
