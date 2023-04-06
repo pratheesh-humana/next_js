@@ -62,15 +62,13 @@ const Signin = ({ setView }) => {
           <h1>Login</h1>
         </header>
         <div className="mb-3 form_control">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Email address
-          </label>
           <input
             type="email"
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             name="email"
+            placeholder="Email address"
             autoComplete="off"
             value={values.email}
             onChange={handleChange}
@@ -84,14 +82,12 @@ const Signin = ({ setView }) => {
           </div>
         </div>
         <div className="mb-3 form_control">
-          <label htmlFor="exampleInputPassword1" className="form-label">
-            Password
-          </label>
           <input
             type="password"
             className="form-control"
             id="exampleInputPassword1"
             name="password"
+            placeholder="Password"
             autoComplete="off"
             value={values.password}
             onChange={handleChange}
