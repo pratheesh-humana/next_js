@@ -68,7 +68,7 @@ const Posts = ({ countries, setView, error }) => {
       {countries?.map((currElem) => {
         const { code, name, emoji } = currElem;
         return (
-          <div className="cards">
+          <div className="cards" key={code}>
             <h3>{emoji}</h3>
             <h3>{name}</h3>
             <h2 className="title_link">{code}</h2>
