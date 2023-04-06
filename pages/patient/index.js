@@ -4,7 +4,17 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {ApolloClient,InMemoryCache} from "@apollo/client";
 
+
+//create client
+const client =new ApolloClient({
+  uri:"https://graphqlzero.almansi.me/api",
+  cache:new InMemoryCache()
+})
+
+
+//Need to comments down below code 
 export const getStaticProps = async () => {
   try {
     const res = await fetch("https://dummyjson.com/posts");
