@@ -4,6 +4,8 @@ import Dashboard from "@/components/Dashboard";
 import Head from "next/head";
 import { useState } from "react";
 import "@/styles/globals.css";
+import { ApolloProvider } from "@apollo/client"; 
+import client from "@/apolloClient";
 
 const App = ({ Component, pageProps }) => {
   const [view, setView] = useState(false);
@@ -27,7 +29,9 @@ const App = ({ Component, pageProps }) => {
       </Head>
 
       {view ? <Dashboard setView={setView} /> : <Header />}
+    <ApolloProvider client={client}>
       <Component {...pageProps} setView={setView} />
+      </ApolloProvider>
       <Footer />
     </>
   );

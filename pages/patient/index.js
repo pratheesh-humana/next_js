@@ -1,28 +1,28 @@
-import Link from "next/link";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {ApolloClient,InMemoryCache} from "@apollo/client";
+import { gql } from "@apollo/client";
+import client from "../../apolloClient";
 
-
-//create client
-const client =new ApolloClient({
-  uri:"https://graphqlzero.almansi.me/api",
-  cache:new InMemoryCache()
-})
-
-
-//Need to comments down below code 
 export const getStaticProps = async () => {
   try {
-    const res = await fetch("https://dummyjson.com/posts");
-    const { posts } = await res.json();
+    const { data } = await client.query({
+      query: gql`
+        query Countries {
+          countries {
+            code
+            name
+            emoji
+          }
+        }
+      `,
+    });
 
     return {
       props: {
-        posts,
+        countries: data.countries,
       },
     };
   } catch (error) {
@@ -34,7 +34,7 @@ export const getStaticProps = async () => {
   }
 };
 
-const Posts = ({ posts, setView, error }) => {
+const Posts = ({ countries, setView, error }) => {
   const router = useRouter();
 
   const notifyError = () =>
@@ -62,22 +62,19 @@ const Posts = ({ posts, setView, error }) => {
 
   return (
     <>
-      <>
-        <Head>
-          <title>Patient Details</title>
-        </Head>
-        {posts?.slice(0, 20).map((currElem) => {
-          const { id, title } = currElem;
-          return (
-            <div key={id} className="cards">
-              <h3>{id}</h3>
-              <Link href={`/patient/${id}`}>
-                <h2 className="title_link">{title}</h2>
-              </Link>
-            </div>
-          );
-        })}
-      </>
+      <Head>
+        <title>Patient Details</title>
+      </Head>
+      {countries?.map((currElem) => {
+        const { code, name, emoji } = currElem;
+        return (
+          <div className="cards">
+            <h3>{emoji}</h3>
+            <h3>{name}</h3>
+            <h2 className="title_link">{code}</h2>
+          </div>
+        );
+      })}
       <ToastContainer />
     </>
   );

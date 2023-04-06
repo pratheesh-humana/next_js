@@ -107,8 +107,8 @@ section {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: auto;
-  margin: 10px;
+  height: 90vh;
+
 }
 
 .signin_form_container{
@@ -116,7 +116,7 @@ section {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 85vh;
+  height: 87vh;
 }
 
 .form{
