@@ -27,7 +27,7 @@ export const getStaticPaths = async () => {
       fallback: false,
     };
   } catch (error) {
-    console.log(error);
+    pino.info(`Error: ${error}`);
   }
 };
 
@@ -65,7 +65,7 @@ export const getStaticProps = async (context) => {
       },
     };
   } catch (error) {
-    console.log(error);
+    pino.info(`Error: ${error}`);
   }
 };
 
@@ -81,9 +81,9 @@ const PatientData = ({ data, setView }) => {
         <Head>
           <title>Patient Country Details</title>
         </Head>
-        <div className="container" key={languages[0].code}>
+        <div className="container" key={languages[0]?.code}>
           <h2 className="id_style">Patient Country : {name}</h2>
-          <h3 className="val_style">Patient Language : {languages[0].name}</h3>
+          <h3 className="val_style">Patient Language : {languages[0]?.name}</h3>
           <h3 className="val_style">Native : {native}</h3>
           <h3 className="val_style">Capital : {capital}</h3>
           <h3 className="val_style">Currency : {currency}</h3>
