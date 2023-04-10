@@ -2,10 +2,10 @@ import Link from "next/link";
 import Head from "next/head";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { gql } from "@apollo/client";
 import client from "../../apolloClient";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const getStaticProps = async () => {
   try {
@@ -23,7 +23,7 @@ export const getStaticProps = async () => {
 
     return {
       props: {
-        countries: data.countries,
+        countries: data.countries.slice(0, 40),
       },
     };
   } catch (error) {
@@ -70,11 +70,10 @@ const Posts = ({ countries, setView, error }) => {
         const { code, name, emoji } = currElem;
         return (
           <div className="cards" key={code}>
-            <h3>{emoji}</h3>
-            <Link href={`/patient/${name.length}`}>
+            <h2 className="title_link">{code}</h2>
+            <Link href={`/patient/${code}`}>
               <h3>{name}</h3>
             </Link>
-            <h2 className="title_link">{code}</h2>
           </div>
         );
       })}

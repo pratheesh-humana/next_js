@@ -4,6 +4,7 @@ import { signInSchema } from "./Validation_Schema";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import pino from "../logger";
 
 const initialValues = {
   email: "",
@@ -50,7 +51,7 @@ const Signin = ({ setView }) => {
           }
         } catch (error) {
           router.push("/500");
-          console.log(error);
+          pino.info(`Error: ${error}`);
         }
       },
     });
