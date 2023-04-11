@@ -25,15 +25,6 @@ const initialValues = {
 };
 
 const Signup = () => {
-  const { data, error } = useQuery(QUERY);
-
-  if (error) {
-    console.error(error);
-    return null;
-  }
-
-  const countries = data?.countries?.slice(100, 110);
-
   const router = useRouter();
 
   const notifyError = () =>
@@ -62,6 +53,15 @@ const Signup = () => {
         }
       },
     });
+
+  const { data, error } = useQuery(QUERY);
+
+  if (error) {
+    console.error(error);
+    return null;
+  }
+
+  const countries = data?.countries?.slice(100, 110);
 
   return (
     <div className="form_container" onSubmit={handleSubmit}>
