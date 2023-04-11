@@ -54,7 +54,7 @@ section {
   border-radius: 12px;
   flex-direction: column;
   align-items: center;
-  height: 95vh;
+  height: 75vh;
   justify-content: center;
   margin: 35px;
   border: 2px solid;
@@ -204,12 +204,10 @@ section {
 .page_404  img{ width:100%;}
 
 .four_zero_four_bg{
- 
  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
     height: 400px;
     background-position: center;
  }
- 
  
 .four_zero_four_bg h1{
  font-size:80px;
@@ -237,4 +235,10 @@ section {
   align-items: center;
   width: 106vw;
   height: 73vh;
+}
+
+.custom-select{
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 10px;
 }

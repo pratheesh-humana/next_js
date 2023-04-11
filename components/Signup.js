@@ -4,6 +4,16 @@ import { patientSignUpSchema } from "./Validation_Schema";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useQuery, gql } from "@apollo/client";
+
+const QUERY = gql`
+  query Countries {
+    countries {
+      name
+      code
+    }
+  }
+`;
 
 const initialValues = {
   patientName: "",
@@ -11,9 +21,19 @@ const initialValues = {
   age: "",
   email: "",
   password: "",
+  country: "",
 };
 
 const Signup = () => {
+  const { data, error } = useQuery(QUERY);
+
+  if (error) {
+    console.error(error);
+    return null;
+  }
+
+  const countries = data?.countries?.slice(100, 110);
+
   const router = useRouter();
 
   const notifyError = () =>
@@ -132,6 +152,27 @@ const Signup = () => {
           {errors.password && touched.password ? (
             <p className="form-error">{errors.password}</p>
           ) : null}
+        </div>
+        <div className="custom-select">
+          <select
+            style={{ height: "5vh", width: "100%", borderRadius: "4px" }}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.country}
+            name="country"
+            id="country-id"
+            placeholder="Select Country"
+          >
+            <option value="">Select Country</option>
+            {countries?.map((res) => {
+              const { name, code } = res;
+              return (
+                <option className="dropdrown" key={code} value={res.name}>
+                  {name}
+                </option>
+              );
+            })}
+          </select>
         </div>
         <div className="mb-3 form-check">
           <Link href="/" className="accountcolor">

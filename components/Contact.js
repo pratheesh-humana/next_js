@@ -12,7 +12,12 @@ const Contact = ({ setView }) => {
         <h1 className="title">Contact</h1>
       </header>
       <div className="img_contact">
-        <Image src="/image.webp" width="500" height="350" alt="Contact Details"></Image>
+        <Image
+          src="/image.webp"
+          width="500"
+          height="350"
+          alt="Contact Details"
+        ></Image>
       </div>
     </>
   );
