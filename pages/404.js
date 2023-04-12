@@ -1,5 +1,6 @@
-import NotFound from "@/components/Error/NotFound";
 import Head from "next/head";
+
+import NotFound from "@/components/Error/NotFound";
 
 const Error = () => {
   return (

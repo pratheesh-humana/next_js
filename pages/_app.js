@@ -1,11 +1,13 @@
+import { useState } from "react";
+import Head from "next/head";
+
+import { ApolloProvider } from "@apollo/client";
+
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Dashboard from "@/components/Dashboard";
-import Head from "next/head";
-import { useState } from "react";
-import "@/styles/globals.css";
-import { ApolloProvider } from "@apollo/client";
 import client from "../api/apolloClient";
+import "@/styles/globals.css";
 
 const App = ({ Component, pageProps }) => {
   const [view, setView] = useState(false);

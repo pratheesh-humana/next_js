@@ -1,11 +1,13 @@
-import Link from "next/link";
-import Head from "next/head";
 import { useEffect } from "react";
+import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
-import { gql } from "@apollo/client";
-import client from "../../api/apolloClient";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { gql } from "@apollo/client";
+
+import client from "../../api/apolloClient";
 
 export const getStaticProps = async () => {
   try {

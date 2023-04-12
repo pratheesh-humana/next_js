@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Image from "next/image";
+
 import { title, img_contact } from "../styles/Contact.module.css";
 
 const Contact = ({ setView }) => {

@@ -1,8 +1,10 @@
 import { useEffect } from "react";
+import Head from "next/head";
+
 import { gql } from "@apollo/client";
+
 import client from "../../api/apolloClient";
 import pino from "../../logger";
-import Head from "next/head";
 import {
   container,
   id_style,

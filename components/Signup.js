@@ -1,12 +1,14 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
+
+import { useFormik } from "formik";
+import { useQuery, gql } from "@apollo/client";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import { patientSignUpSchema } from "./Validation_Schema";
 import styles from "../styles/Signup.module.css";
 import pino from "../logger";
-import { useFormik } from "formik";
-import { patientSignUpSchema } from "./Validation_Schema";
-import { useRouter } from "next/router";
-import { ToastContainer, toast } from "react-toastify";
-import { useQuery, gql } from "@apollo/client";
-import "react-toastify/dist/ReactToastify.css";
 
 const QUERY = gql`
   query Countries {
