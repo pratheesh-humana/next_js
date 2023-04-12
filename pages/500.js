@@ -1,5 +1,6 @@
-import InternalServerError from "@/components/Error/InternalServerError";
 import Head from "next/head";
+
+import InternalServerError from "@/components/Error/InternalServerError";
 
 const Internal_Server_Error = () => {
   return (

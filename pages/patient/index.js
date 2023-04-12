@@ -1,11 +1,13 @@
-import Link from "next/link";
-import Head from "next/head";
 import { useEffect } from "react";
+import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
-import { gql } from "@apollo/client";
-import client from "../../apolloClient";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { gql } from "@apollo/client";
+
+import client from "../../api/apolloClient";
 
 export const getStaticProps = async () => {
   try {
@@ -67,7 +69,7 @@ const Posts = ({ countries, setView, error }) => {
         <title>Patient Details</title>
       </Head>
       {countries?.map((currElem) => {
-        const { code, name, emoji } = currElem;
+        const { code, name } = currElem;
         return (
           <div className="cards" key={code}>
             <h2 className="title_link">{code}</h2>

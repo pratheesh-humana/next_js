@@ -1,8 +1,15 @@
 import { useEffect } from "react";
-import { gql } from "@apollo/client";
-import client from "../../apolloClient";
-import pino from "../../logger";
 import Head from "next/head";
+
+import { gql } from "@apollo/client";
+
+import client from "../../api/apolloClient";
+import pino from "../../logger";
+import {
+  container,
+  id_style,
+  val_style,
+} from "../../styles/Country.module.css";
 
 export const getStaticPaths = async () => {
   try {
@@ -81,13 +88,13 @@ const PatientData = ({ data, setView }) => {
         <Head>
           <title>Patient Country Details</title>
         </Head>
-        <div className="container" key={languages[0]?.code}>
-          <h2 className="id_style">Patient Country : {name}</h2>
-          <h3 className="val_style">Patient Language : {languages[0]?.name}</h3>
-          <h3 className="val_style">Native : {native}</h3>
-          <h3 className="val_style">Capital : {capital}</h3>
-          <h3 className="val_style">Currency : {currency}</h3>
-          <h3 className="val_style">Emoji : {emoji}</h3>
+        <div className={container} key={languages[0]?.code}>
+          <h2 className={id_style}>Patient Country : {name}</h2>
+          <h3 className={val_style}>Patient Language : {languages[0]?.name}</h3>
+          <h3 className={val_style}>Native : {native}</h3>
+          <h3 className={val_style}>Capital : {capital}</h3>
+          <h3 className={val_style}>Currency : {currency}</h3>
+          <h3 className={val_style}>Emoji : {emoji}</h3>
         </div>
       </div>
     </>

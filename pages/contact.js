@@ -1,5 +1,6 @@
-import Contact from "@/components/Contact";
 import Head from "next/head";
+
+import Contact from "@/components/Contact";
 
 const ContactPage = ({ setView }) => {
   return (

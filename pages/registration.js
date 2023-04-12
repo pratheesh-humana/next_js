@@ -1,5 +1,7 @@
-import Signup from "@/components/Signup";
 import Head from "next/head";
+
+import Signup from "@/components/Signup";
+import ClientOnly from "@/components/ClientOnly";
 
 const Registration = () => {
   return (
@@ -7,7 +9,9 @@ const Registration = () => {
       <Head>
         <title>Registration</title>
       </Head>
-      <Signup />
+      <ClientOnly>
+        <Signup />
+      </ClientOnly>
     </>
   );
 };
