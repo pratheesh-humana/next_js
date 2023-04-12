@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Image from "next/image";
+import { title, img_contact } from "../styles/Contact.module.css";
 
 const Contact = ({ setView }) => {
   useEffect(() => {
@@ -9,9 +10,9 @@ const Contact = ({ setView }) => {
   return (
     <>
       <header>
-        <h1 className="title">Contact</h1>
+        <h1 className={title}>Contact</h1>
       </header>
-      <div className="img_contact">
+      <div className={img_contact}>
         <Image
           src="/image.webp"
           width="500"

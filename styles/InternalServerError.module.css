@@ -1,0 +1,25 @@
+.cover_background {
+  position: relative !important;
+  background-size: cover !important;
+  overflow: hidden !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.p_0 {
+  padding: 0 !important;
+}
+
+.error_page {
+  background-color: #bababa4a;
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(234, 234, 235, 0.2);
+  padding: 80px 20px;
+}
+
+.heading {
+  font-size: 200px;
+  line-height: 1;
+  font-weight: 600;
+}

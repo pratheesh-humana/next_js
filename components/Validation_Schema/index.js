@@ -11,13 +11,14 @@ export const patientSignUpSchema = Yup.object({
     .positive("A phone number can't start with a minus")
     .integer("A phone number can't include a decimal point")
     .min(8)
-    .required("A phone number is required"),
+    .required("Phone number is required"),
   age: Yup.number().min(1).max(110).required("Please enter a your age"),
   email: Yup.string().email().required("Please enter your email"),
   password: Yup.string()
     .required("No password provided.")
     .min(8, "Password is too short - should be 8 chars minimum.")
     .matches(/[a-zA-Z]/, "Password can only contain Latin letters."),
+  country: Yup.string().required("Please select the country"),
 });
 
 export const signInSchema = Yup.object({

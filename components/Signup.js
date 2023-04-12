@@ -1,10 +1,12 @@
 import Link from "next/link";
+import styles from "../styles/Signup.module.css";
+import pino from "../logger";
 import { useFormik } from "formik";
 import { patientSignUpSchema } from "./Validation_Schema";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useQuery, gql } from "@apollo/client";
+import "react-toastify/dist/ReactToastify.css";
 
 const QUERY = gql`
   query Countries {
@@ -57,22 +59,22 @@ const Signup = () => {
   const { data, error } = useQuery(QUERY);
 
   if (error) {
-    console.error(error);
+    pino.error(`error ${error}`);
     return null;
   }
 
   const countries = data?.countries?.slice(100, 110);
 
   return (
-    <div className="form_container" onSubmit={handleSubmit}>
-      <form className="form">
-        <header className="heading">
+    <div className={styles.form_container} onSubmit={handleSubmit}>
+      <form className={styles.form}>
+        <header className={styles.heading}>
           <h1>Patient Registration</h1>
         </header>
-        <div className="mb-3 form_control">
+        <div className={`mb-3 ${styles.form_control}`}>
           <input
             type="text"
-            className="form-control"
+            className={`form-control`}
             id="patient-name"
             aria-describedby="emailHelp"
             name="patientName"
@@ -83,13 +85,13 @@ const Signup = () => {
             onBlur={handleBlur}
           />
           {errors.patientName && touched.patientName ? (
-            <p className="form-error">{errors.patientName}</p>
+            <p className={styles.form_error}>{errors.patientName}</p>
           ) : null}
         </div>
-        <div className="mb-3 form_control">
+        <div className={`mb-3 ${styles.form_control}`}>
           <input
             type="text"
-            className="form-control"
+            className={`form-control`}
             id="Phone-No"
             aria-describedby="emailHelp"
             name="phoneNo"
@@ -100,13 +102,13 @@ const Signup = () => {
             onBlur={handleBlur}
           />
           {errors.phoneNo && touched.phoneNo ? (
-            <p className="form-error">{errors.phoneNo}</p>
+            <p className={styles.form_error}>{errors.phoneNo}</p>
           ) : null}
         </div>
-        <div className="mb-3 form_control">
+        <div className={`mb-3 ${styles.form_control}`}>
           <input
             type="number"
-            className="form-control"
+            className={`form-control`}
             id="patient-age"
             aria-describedby="emailHelp"
             name="age"
@@ -117,13 +119,13 @@ const Signup = () => {
             onBlur={handleBlur}
           />
           {errors.age && touched.age ? (
-            <p className="form-error">{errors.age}</p>
+            <p className={styles.form_error}>{errors.age}</p>
           ) : null}
         </div>
-        <div className="mb-3 form_control">
+        <div className={`mb-3 ${styles.form_control}`}>
           <input
             type="email"
-            className="form-control"
+            className={`form-control`}
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             name="email"
@@ -134,13 +136,13 @@ const Signup = () => {
             onBlur={handleBlur}
           />
           {errors.email && touched.email ? (
-            <p className="form-error">{errors.email}</p>
+            <p className={styles.form_error}>{errors.email}</p>
           ) : null}
         </div>
-        <div className="mb-3 form_control">
+        <div className={`mb-3 ${styles.form_control}`}>
           <input
             type="password"
-            className="form-control"
+            className={`form-control`}
             id="exampleInputPassword1"
             name="password"
             placeholder="Password"
@@ -150,12 +152,12 @@ const Signup = () => {
             onBlur={handleBlur}
           />
           {errors.password && touched.password ? (
-            <p className="form-error">{errors.password}</p>
+            <p className={styles.form_error}>{errors.password}</p>
           ) : null}
         </div>
-        <div className="custom-select">
+        <div className={styles.custom_select}>
           <select
-            style={{ height: "5vh", width: "100%", borderRadius: "4px" }}
+            className={styles.select_country}
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.country}
@@ -174,13 +176,21 @@ const Signup = () => {
             })}
           </select>
         </div>
-        <div className="mb-3 form-check">
-          <Link href="/" className="accountcolor">
+        <div className={styles.custom_margin}>
+          {errors.country && touched.country ? (
+            <p className={styles.form_error}>{errors.country}</p>
+          ) : null}
+        </div>
+        <div className={`mb-3 ${styles.form_check}`}>
+          <Link href="/" className={styles.accountcolor}>
             I am already registered
           </Link>
         </div>
-        <div className="d-grid gap-2">
-          <button type="submit" className="btn btn-primary button_arjust">
+        <div className={`d-grid gap-2`}>
+          <button
+            type="submit"
+            className={`btn btn-primary ${styles.button_arjust}`}
+          >
             Submit
           </button>
         </div>

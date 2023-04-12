@@ -5,7 +5,7 @@ import Head from "next/head";
 import { useState } from "react";
 import "@/styles/globals.css";
 import { ApolloProvider } from "@apollo/client";
-import client from "@/apolloClient";
+import client from "../api/apolloClient";
 
 const App = ({ Component, pageProps }) => {
   const [view, setView] = useState(false);

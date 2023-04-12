@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { gql } from "@apollo/client";
-import client from "../../apolloClient";
+import client from "../../api/apolloClient";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
