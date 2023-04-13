@@ -81,7 +81,7 @@ const Signin = ({ setView }) => {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             name="email"
-            placeholder="Email address"
+            placeholder="Email Address"
             autoComplete="off"
             value={values.email}
             onChange={handleChange}
@@ -121,6 +121,7 @@ const Signin = ({ setView }) => {
           <button
             type="submit"
             className={`btn btn-primary ${styles.button_arjust}`}
+            disabled={!values.email || !values.password}
           >
             Submit
           </button>
