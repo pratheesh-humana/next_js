@@ -8,7 +8,7 @@ describe("Signin", () => {
     render(<Signin />);
   });
 
-  it("renders a heading", () => {
+  it("Renders a heading", () => {
     const heading = screen.getByRole("heading", {
       name: "Login",
     });
@@ -16,22 +16,22 @@ describe("Signin", () => {
     expect(heading).toBeInTheDocument();
   });
 
-  it("email input should be rendered", () => {
+  it("Email input should be rendered", () => {
     const emailInput = screen.getByPlaceholderText("Email Address");
     expect(emailInput).toHaveAttribute("placeholder", "Email Address");
   });
 
-  it("password input should be rendered", () => {
+  it("Password input should be rendered", () => {
     const passwordInput = screen.getByPlaceholderText("Password");
     expect(passwordInput).toHaveAttribute("placeholder", "Password");
   });
 
-  it("button input should be rendered", () => {
+  it("Signin button should get rendered", () => {
     const buttonElement = screen.getByRole("button");
     expect(buttonElement).toBeInTheDocument();
   });
 
-  it("login form with 1 button should be rendered", async () => {
+  it("Login form with 1 button should be rendered", async () => {
     const buttonElement = await screen.findAllByRole("button");
     expect(buttonElement).toHaveLength(1);
   });
@@ -42,16 +42,16 @@ describe("Signin", () => {
   });
 
   it("Intially password input should be empty", () => {
-    const passwordInput = screen.getByPlaceholderText("Email Address");
+    const passwordInput = screen.getByPlaceholderText("Password");
     expect(passwordInput.value).toBe("");
   });
 
-  it("button should be disabled", () => {
+  it("Signin button should be disabled", () => {
     const buttonElement = screen.getByRole("button");
     expect(buttonElement).toBeDisabled();
   });
 
-  it("email input should change", () => {
+  it("Email input should change", () => {
     const emailInput = screen.getByPlaceholderText("Email Address");
 
     const testValue = "utkarsh@gmail.com";
@@ -60,7 +60,7 @@ describe("Signin", () => {
     expect(emailInput.value).toBe(testValue);
   });
 
-  it("password input should change", () => {
+  it("Password input should change", () => {
     const passwordInput = screen.getByPlaceholderText("Password");
 
     const testValue = "Akash@63517";
@@ -69,7 +69,7 @@ describe("Signin", () => {
     expect(passwordInput.value).toBe(testValue);
   });
 
-  it("button should not be disabled when inputs exists", () => {
+  it("Signin button should not be disabled when inputs exists", () => {
     const buttonElement = screen.getByRole("button");
 
     const emailInput = screen.getByPlaceholderText("Email Address");
