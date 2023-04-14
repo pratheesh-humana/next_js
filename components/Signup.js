@@ -192,6 +192,14 @@ const Signup = () => {
           <button
             type="submit"
             className={`btn btn-primary ${styles.button_arjust}`}
+            disabled={
+              !values.patientName ||
+              !values.phoneNo ||
+              !values.age ||
+              !values.email ||
+              !values.password ||
+              !values.country
+            }
           >
             Submit
           </button>
