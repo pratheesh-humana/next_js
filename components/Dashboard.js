@@ -36,6 +36,14 @@ const Dashboard = ({ setView }) => {
               </li>
               <li>
                 <Link
+                  href="/documents"
+                  className="nav-link active text-white font-weight-bold"
+                >
+                  Documents
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="nav-link active text-white font-weight-bold"
                 >
