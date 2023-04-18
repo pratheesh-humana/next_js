@@ -66,7 +66,7 @@ const columns = [
     field: "comments",
     headerName: "Comments",
     sortable: false,
-    width: 400,
+    width: 450,
     valueGetter: (params) => `${params.row.comments.data[0].body}`,
   },
 ];
