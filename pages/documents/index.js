@@ -54,7 +54,6 @@ export const getStaticProps = async () => {
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
   { field: "title", headerName: "Title", width: 130 },
-  { field: "body", headerName: "Body", width: 130 },
   {
     field: "user",
     headerName: "Name",
@@ -62,11 +61,12 @@ const columns = [
     width: 90,
     valueGetter: (params) => `${params.row.user.name}`,
   },
+  { field: "body", headerName: "Body", width: 300 },
   {
     field: "comments",
     headerName: "Comments",
     sortable: false,
-    width: 260,
+    width: 400,
     valueGetter: (params) => `${params.row.comments.data[0].body}`,
   },
 ];
