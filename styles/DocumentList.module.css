@@ -1,0 +1,20 @@
+.table_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  width: 100vw;
+}
+
+.table_wrapper {
+  width: 55vw;
+  height: 52%;
+}
+
+.heading {
+  text-align: center;
+  font-family: cursive;
+  margin: 0px;
+  background-color: turquoise;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
