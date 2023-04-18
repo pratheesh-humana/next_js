@@ -7,12 +7,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { clientGraphqlzero } from "@/api/apolloClient";
-import pino from "../../logger";
 import {
   table_container,
   table_wrapper,
   heading,
 } from "../../styles/DocumentList.module.css";
+import pino from "../../logger";
 
 export const getStaticProps = async () => {
   try {
