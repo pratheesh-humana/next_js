@@ -76,7 +76,7 @@ export default function DataTable({ data, setView }) {
   const router = useRouter();
 
   const notifyError = () =>
-    toast.error("You need to login to fetch patient's details!", {
+    toast.error("You need to login to fetch patient's list!", {
       position: toast.POSITION.TOP_CENTER,
     });
 
