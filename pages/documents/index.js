@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 import { DataGrid } from "@mui/x-data-grid";
 import { gql } from "@apollo/client";
@@ -53,20 +54,20 @@ export const getStaticProps = async () => {
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
-  { field: "title", headerName: "Title", width: 130 },
+  { field: "title", headerName: "Patient Name", width: 130 },
   {
     field: "user",
-    headerName: "Name",
+    headerName: "Doctor's Name",
     type: "string",
-    width: 90,
+    width: 165,
     valueGetter: (params) => `${params.row.user.name}`,
   },
-  { field: "body", headerName: "Body", width: 300 },
+  { field: "body", headerName: "Prescription", width: 250 },
   {
     field: "comments",
     headerName: "Comments",
     sortable: false,
-    width: 450,
+    width: 430,
     valueGetter: (params) => `${params.row.comments.data[0].body}`,
   },
 ];
@@ -75,7 +76,7 @@ export default function DataTable({ data, setView }) {
   const router = useRouter();
 
   const notifyError = () =>
-    toast.error("You need to login to fetch patient's details!", {
+    toast.error("You need to login to fetch patient's list!", {
       position: toast.POSITION.TOP_CENTER,
     });
 
@@ -93,8 +94,13 @@ export default function DataTable({ data, setView }) {
 
   return (
     <div className={table_container}>
+      <Head>
+        <title>{`Patient's List`}</title>
+      </Head>
       <div className={table_wrapper}>
-        <h1 className={heading}>Documents</h1>
+        <header>
+          <h1 className={heading}>{`Patient's List`}</h1>
+        </header>
         <DataGrid
           rows={data}
           columns={columns}
