@@ -56,7 +56,7 @@ const Signin = ({ setView }) => {
               localStorage.setItem("user_login", JSON.stringify(getUserData));
               notify();
               setTimeout(() => {
-                router.push("/patient");
+                router.push("/documents");
                 setView(true);
               }, 3000);
             }

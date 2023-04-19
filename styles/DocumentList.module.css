@@ -8,13 +8,14 @@
 
 .table_wrapper {
   width: 70%;
-  height: 68%;
+  height: 66%;
   margin-bottom: 10%;
 }
 
 .heading {
   text-align: center;
-  font-family: cursive;
+  font-family: monospace;
+  font-weight: bold;
   margin: 0px;
   background-color: turquoise;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

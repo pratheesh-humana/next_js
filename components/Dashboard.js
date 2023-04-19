@@ -25,21 +25,21 @@ const Dashboard = ({ setView }) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto head">
+              <li>
+                <Link
+                  href="/documents"
+                  className="nav-link active text-white font-weight-bold"
+                >
+                  Patient List
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link
                   href="/patient"
                   className="nav-link active text-white font-weight-bold"
                   aria-current="page"
                 >
-                  Patient Details
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/documents"
-                  className="nav-link active text-white font-weight-bold"
-                >
-                  Documents
+                  Patient Country
                 </Link>
               </li>
               <li>
