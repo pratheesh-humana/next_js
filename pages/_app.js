@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Head from "next/head";
 
+import { SessionProvider } from "next-auth/react";
 import { ApolloProvider } from "@apollo/client";
 
 import Footer from "@/components/Footer";
@@ -31,9 +32,11 @@ const App = ({ Component, pageProps }) => {
       </Head>
 
       {view ? <Dashboard setView={setView} /> : <Header />}
-      <ApolloProvider client={client}>
-        <Component {...pageProps} setView={setView} />
-      </ApolloProvider>
+      <SessionProvider session={pageProps.session}>
+        <ApolloProvider client={client}>
+          <Component {...pageProps} setView={setView} />
+        </ApolloProvider>
+      </SessionProvider>
       <Footer />
     </>
   );
