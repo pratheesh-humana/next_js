@@ -6,7 +6,7 @@ import { ApolloProvider } from "@apollo/client";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Dashboard from "@/components/Dashboard";
-import client from "../api/apolloClient";
+import { clientServiceHumana } from "../api/apolloClient";
 import "@/styles/globals.css";
 
 const App = ({ Component, pageProps }) => {
@@ -28,10 +28,16 @@ const App = ({ Component, pageProps }) => {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+          crossOrigin="anonymous"
+        />
       </Head>
 
       {view ? <Dashboard setView={setView} /> : <Header />}
-      <ApolloProvider client={client}>
+      <ApolloProvider client={clientServiceHumana}>
         <Component {...pageProps} setView={setView} />
       </ApolloProvider>
       <Footer />

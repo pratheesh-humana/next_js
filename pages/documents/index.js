@@ -76,7 +76,7 @@ export default function DataTable({ data, setView }) {
   const router = useRouter();
 
   const notifyError = () =>
-    toast.error("You need to login to fetch patient's details!", {
+    toast.error("You need to login to fetch patient's list!", {
       position: toast.POSITION.TOP_CENTER,
     });
 
@@ -95,11 +95,11 @@ export default function DataTable({ data, setView }) {
   return (
     <div className={table_container}>
       <Head>
-        <title>Patient's List</title>
+        <title>{`Patient's List`}</title>
       </Head>
       <div className={table_wrapper}>
         <header>
-          <h1 className={heading}>Patient's List</h1>
+          <h1 className={heading}>{`Patient's List`}</h1>
         </header>
         <DataGrid
           rows={data}

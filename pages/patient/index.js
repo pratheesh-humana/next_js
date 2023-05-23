@@ -41,7 +41,7 @@ const Posts = ({ countries, setView, error }) => {
   const router = useRouter();
 
   const notifyError = () =>
-    toast("You need to login to fetch patient's details!", {
+    toast("You need to login to fetch patient's country!", {
       position: toast.POSITION.TOP_CENTER,
     });
 
