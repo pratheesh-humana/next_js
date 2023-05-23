@@ -17,10 +17,10 @@ const BasicTable = ({ data }) => {
   return (
     <table {...getTableProps()}>
       <thead>
-        {headerGroups.map((headerGroup, i) => (
-          <tr {...headerGroup.getHeaderGroupProps()} key={i}>
-            {headerGroup.headers.map((column, i) => (
-              <th {...column.getHeaderProps()} key={i}>
+        {headerGroups.map((headerGroup) => (
+          <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
+            {headerGroup.headers.map((column) => (
+              <th {...column.getHeaderProps()} key={column.id}>
                 {column.render("Header")}
               </th>
             ))}
@@ -29,12 +29,12 @@ const BasicTable = ({ data }) => {
       </thead>
       <tbody {...getTableBodyProps()}>
         {rows.map((row) => {
-          prepareRow(row, i);
+          prepareRow(row);
           return (
-            <tr {...row.getRowProps()} key={i}>
-              {row.cells.map((cell, i) => {
+            <tr {...row.getRowProps()} key={row.id}>
+              {row.cells.map((cell) => {
                 return (
-                  <td {...cell.getCellProps()} key={i}>
+                  <td {...cell.getCellProps()} key={cell.id}>
                     {cell.render("Cell")}
                   </td>
                 );
