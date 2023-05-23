@@ -17,21 +17,27 @@ const BasicTable = ({ data }) => {
   return (
     <table {...getTableProps()}>
       <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+        {headerGroups.map((headerGroup, i) => (
+          <tr {...headerGroup.getHeaderGroupProps()} key={i}>
+            {headerGroup.headers.map((column, i) => (
+              <th {...column.getHeaderProps()} key={i}>
+                {column.render("Header")}
+              </th>
             ))}
           </tr>
         ))}
       </thead>
       <tbody {...getTableBodyProps()}>
         {rows.map((row) => {
-          prepareRow(row);
+          prepareRow(row, i);
           return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+            <tr {...row.getRowProps()} key={i}>
+              {row.cells.map((cell, i) => {
+                return (
+                  <td {...cell.getCellProps()} key={i}>
+                    {cell.render("Cell")}
+                  </td>
+                );
               })}
             </tr>
           );
