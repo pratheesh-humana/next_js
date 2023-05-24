@@ -33,6 +33,14 @@ const Dashboard = ({ setView }) => {
                   Patient List
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/table"
+                  className="nav-link active text-white font-weight-bold"
+                >
+                  Prescription List
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link
                   href="/patient"
