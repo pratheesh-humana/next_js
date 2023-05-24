@@ -6,7 +6,7 @@ import { ApolloProvider } from "@apollo/client";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Dashboard from "@/components/Dashboard";
-import { clientServiceHumana } from "../api/apolloClient";
+import client from "@/api/apolloClient";
 import "@/styles/globals.css";
 
 const App = ({ Component, pageProps }) => {
@@ -37,7 +37,7 @@ const App = ({ Component, pageProps }) => {
       </Head>
 
       {view ? <Dashboard setView={setView} /> : <Header />}
-      <ApolloProvider client={clientServiceHumana}>
+      <ApolloProvider client={client}>
         <Component {...pageProps} setView={setView} />
       </ApolloProvider>
       <Footer />
