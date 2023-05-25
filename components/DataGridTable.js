@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
 
 import {
@@ -59,7 +59,11 @@ const columns = [
   }),
 ];
 
-const DataGridTable = () => {
+useEffect(() => {
+  setView(true);
+}, []);
+
+const DataGridTable = ({ setView }) => {
   const { data, error, loading } = useQuery(QUERY, {
     variables: { physicianNpi: "12343212" },
   });
