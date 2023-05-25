@@ -1,0 +1,18 @@
+.table_1 {
+  border: 1px solid lightgray;
+}
+
+.table_2 {
+  border-bottom: 1px solid lightgray;
+}
+
+.table_p {
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  padding: 2px 4px;
+}
+
+.table_3 {
+  color: gray;
+  font-weight: normal;
+}

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
+import styles from "../styles/DataGridTable.module.css";
 
 import {
   createColumnHelper,
@@ -91,7 +92,7 @@ const DataGridTable = ({ setView }) => {
   return (
     <div>
       <div className="p-2">
-        <table>
+        <table className={styles.table_1}>
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
@@ -108,7 +109,7 @@ const DataGridTable = ({ setView }) => {
               </tr>
             ))}
           </thead>
-          <tbody>
+          <tbody className={styles.table_2}>
             {table.getRowModel().rows.map((row) => (
               <tr key={row.id}>
                 {row.getVisibleCells().map((cell) => (
@@ -120,11 +121,11 @@ const DataGridTable = ({ setView }) => {
               </tr>
             ))}
           </tbody>
-          <tfoot>
+          <tfoot className={styles.table_3}>
             {table.getFooterGroups().map((footerGroup) => (
               <tr key={footerGroup.id}>
                 {footerGroup.headers.map((header) => (
-                  <th key={header.id}>
+                  <th className={styles.table_p} key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
