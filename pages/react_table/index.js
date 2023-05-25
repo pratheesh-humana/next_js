@@ -6,7 +6,7 @@ const index = ({ setView }) => {
   return (
     <div>
       <ApolloProvider client={clientServiceHumana}>
-        <DataGrid />
+        <DataGrid setView={setView} />
       </ApolloProvider>
     </div>
   );
