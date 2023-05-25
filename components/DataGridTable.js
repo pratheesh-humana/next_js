@@ -59,11 +59,11 @@ const columns = [
   }),
 ];
 
-useEffect(() => {
-  setView(true);
-}, []);
-
 const DataGridTable = ({ setView }) => {
+  useEffect(() => {
+    setView(true);
+  }, []);
+
   const { data, error, loading } = useQuery(QUERY, {
     variables: { physicianNpi: "12343212" },
   });
