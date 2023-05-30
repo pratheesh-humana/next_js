@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
 import styles from "../styles/DataGridTable.module.css";
+import pino from "../logger";
 
 import {
   createColumnHelper,
@@ -8,8 +9,9 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import Prescriber from "./Prescriber";
 
-const QUERY = gql`
+const GET_PATIENT_LISTQUERY = gql`
   query ExampleQuery($physicianNpi: String!) {
     patients(physicianNpi: $physicianNpi) {
       patients {
@@ -65,7 +67,7 @@ const DataGridTable = ({ setView }) => {
     setView(true);
   }, []);
 
-  const { data, error, loading } = useQuery(QUERY, {
+  const { data, error, loading } = useQuery(GET_PATIENT_LISTQUERY, {
     variables: { physicianNpi: "12343212" },
   });
 
@@ -81,16 +83,20 @@ const DataGridTable = ({ setView }) => {
     return <p>Loading ...</p>;
   }
 
-  console.log("*", data);
+  pino.info(`Data: ${data}`);
 
   if (error) {
-    console.log(error);
+    pino.error(`Error ${error}`);
 
     return null;
   }
 
   return (
     <div>
+      <div className={styles.dropdown}>
+        <Prescriber />
+      </div>
+
       <div className="p-2">
         <table className={styles.table_1}>
           <thead>
