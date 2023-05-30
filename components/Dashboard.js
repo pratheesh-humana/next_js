@@ -43,6 +43,15 @@ const Dashboard = ({ setView }) => {
               </li>
               <li className="nav-item">
                 <Link
+                  href="/react_table"
+                  className="nav-link active text-white font-weight-bold"
+                  aria-current="page"
+                >
+                  React Table
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
                   href="/patient"
                   className="nav-link active text-white font-weight-bold"
                   aria-current="page"
