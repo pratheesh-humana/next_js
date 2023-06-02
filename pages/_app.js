@@ -9,6 +9,8 @@ import Dashboard from "@/components/Dashboard";
 import client from "@/api/apolloClient";
 import "@/styles/globals.css";
 
+// {view ? <Dashboard setView={setView} /> : <Header />}
+// <Footer />
 const App = ({ Component, pageProps }) => {
   const [view, setView] = useState(false);
 
@@ -36,11 +38,9 @@ const App = ({ Component, pageProps }) => {
         />
       </Head>
 
-      {view ? <Dashboard setView={setView} /> : <Header />}
       <ApolloProvider client={client}>
         <Component {...pageProps} setView={setView} />
       </ApolloProvider>
-      <Footer />
     </>
   );
 };

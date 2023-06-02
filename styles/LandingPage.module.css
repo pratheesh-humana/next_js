@@ -1,0 +1,73 @@
+.nav_container {
+  height: 116px;
+}
+
+.landing_page_container {
+  margin: 56px 64px;
+  height: 784px;
+}
+
+.landing_page_heading {
+  color: #003da5;
+  width: 863px;
+  height: 63px;
+  font-family: "Museo Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 63px;
+  letter-spacing: -2px;
+}
+
+.landing_page_details {
+  color: #3a3b3d;
+  width: 840px;
+  height: 90px;
+  font-family: "Museo Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.landing_page_bottom_container {
+  margin-bottom: 32px;
+}
+
+.landing_page_providers {
+  color: #3a3b3d;
+  width: 840px;
+  height: 30px;
+  font-family: "Museo Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.landing_page_items {
+  color: #3a3b3d;
+  width: 840px;
+  height: 90px;
+  font-family: "Museo Sans";
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 30px;
+  font-style: normal;
+}
+
+.landing_page_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 17px 24px;
+  gap: 8px;
+  width: 199px;
+  height: 64px;
+  font-family: "Museo Sans";
+  background: #003da5;
+  border-radius: 9999px;
+  font-size: 24px;
+  color: #ffffff;
+}
